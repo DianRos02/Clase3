@@ -18,7 +18,7 @@ public class ClienteSerializable {
             out.close();
             in.close();
         } catch (EOFException e) {
-            System.out.println("e");    
+            System.out.println(e);    
         }
 
  
