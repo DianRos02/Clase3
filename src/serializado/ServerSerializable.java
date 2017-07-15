@@ -19,10 +19,10 @@ public class ServerSerializable {
         
         while(true){
         Socket so = ss.accept(); //para poder aceptar las conexiones 
-        ObjectOutputStream out = new ObjectOutputStream(so.getOutputStream());
-        ObjectInputStream in = new ObjectInputStream(so.getInputStream());   
+        ObjectOutputStream out = new ObjectOutputStream(so.getOutputStream()); // Salida de datos
+        ObjectInputStream in = new ObjectInputStream(so.getInputStream());    // entrada/lectura de datos
             try {
-                System.out.println(in.readObject());
+                System.out.println(in.readObject());                // lectura del dato con el ObjectInputStream
                 out.writeObject("Objeto Recibido");                
             } catch (InvalidClassException e) {
                 System.out.println(e);
