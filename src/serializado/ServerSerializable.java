@@ -1,6 +1,7 @@
 
 package serializado;
 
+import java.io.InvalidClassException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
@@ -19,9 +20,14 @@ public class ServerSerializable {
         while(true){
         Socket so = ss.accept(); //para poder aceptar las conexiones 
         ObjectOutputStream out = new ObjectOutputStream(so.getOutputStream());
-        ObjectInputStream in = new ObjectInputStream(so.getInputStream());            
-            System.out.println(in.readObject());
-            out.writeObject("Objeto Recibido");
+        ObjectInputStream in = new ObjectInputStream(so.getInputStream());   
+            try {
+                System.out.println(in.readObject());
+                out.writeObject("Objeto Recibido");                
+            } catch (InvalidClassException e) {
+                System.out.println(e);
+            }
+
             out.close();
             so.close();
         }
