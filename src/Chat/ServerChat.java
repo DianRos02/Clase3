@@ -7,10 +7,10 @@ import java.net.Socket;
 import javax.swing.JTextArea;
 
 public class ServerChat implements Runnable{
-    JTextArea Txa;
+    JTextArea txa;
 
-    public ServerChat(JTextArea Txa) {
-        this.Txa = Txa;
+    public ServerChat(JTextArea txa) {
+        this.txa = txa;
     }
     
     @Override
@@ -23,7 +23,7 @@ public class ServerChat implements Runnable{
                 
                 String rte = so.getInetAddress()+"";
                 String mensaje = new UtilidadString().GetString(in);
-                Txa.append(rte+" -> " + mensaje );
+                txa.append(rte+" -> " + mensaje );
                 in.close();
                 so.close();
             }
