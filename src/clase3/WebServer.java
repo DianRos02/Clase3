@@ -5,7 +5,9 @@
  */
 package clase3;
 
+import java.io.OutputStream;
 import java.net.ServerSocket;
+import java.net.Socket;
 
 /**
  *
@@ -18,10 +20,15 @@ public class WebServer {
                 +"Content-Type: text/html\n"
                 +"Content-Length: "+ html.length()+"\n\n"
                 +html; 
-        ServerSocket so = new ServerSocket(80); //Ojo a que puertovoy a acceder
+        ServerSocket ss = new ServerSocket(8000); //Ojo a que puertovoy a acceder
         
         while(true){
             System.out.println("Esperando Cliente");
+            Socket so = ss.accept();
+            OutputStream out = so.getOutputStream();
+            out.write(resp.getBytes());
+            out.close();
+            so.close();
         }
     }//Fin clase MAIN
 }//FIN clase WebServer
