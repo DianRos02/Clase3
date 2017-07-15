@@ -9,9 +9,7 @@ import java.util.logging.Logger;
 
 public class Chat extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Chat
-     */
+
     public Chat() {
         initComponents();
         new Thread(new ServerChat(txaChat));
