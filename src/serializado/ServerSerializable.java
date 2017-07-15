@@ -11,14 +11,15 @@ public class ServerSerializable {
         ServerSocket ss = new ServerSocket(6000);
         
         System.out.println("Esperando Cliente");
-        Socket so = ss.accept(); //para poder aceptar las conexiones 
+        
         
         //Streaming para objetos
-        
-        ObjectOutputStream out = new ObjectOutputStream(so.getOutputStream());
-        ObjectInputStream in = new ObjectInputStream(so.getInputStream());
+
         
         while(true){
+        Socket so = ss.accept(); //para poder aceptar las conexiones 
+        ObjectOutputStream out = new ObjectOutputStream(so.getOutputStream());
+        ObjectInputStream in = new ObjectInputStream(so.getInputStream());            
             System.out.println(in.readObject());
             out.writeObject("Objeto Recibido");
             out.close();
