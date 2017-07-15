@@ -8,7 +8,8 @@ import javax.swing.JTextArea;
 
 public class ServerChat implements Runnable{
     JTextArea txa;
-
+        
+    
     public ServerChat(JTextArea txa) {
         this.txa = txa;
     }
@@ -23,7 +24,7 @@ public class ServerChat implements Runnable{
                 
                 String rte = so.getInetAddress()+"";
                 String mensaje = new UtilidadString().GetString(in);
-                txa.append(rte+" -> " + mensaje );
+                txa.append(rte+" -> " + mensaje + "\n");
                 in.close();
                 so.close();
             }
@@ -31,5 +32,5 @@ public class ServerChat implements Runnable{
             System.out.println(e);
         }
     }
-    
-}
+}    
+
