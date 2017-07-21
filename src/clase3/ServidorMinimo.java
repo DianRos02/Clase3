@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class ServidorMinimo {
     public static void main(String[] args) throws Exception{
-        String mensaje="Servidor de Ezequiel";
+        String mensaje="Servidor de Diana";
         ServerSocket sc=new ServerSocket(5555);
         while(true){
             System.out.println("Esperando conexión de un cliente:");

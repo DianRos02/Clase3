@@ -15,7 +15,7 @@ import java.net.Socket;
  */
 public class WebServer {
     public static void main(String[] args) throws Exception{
-        String html = "<h1>Servidor de Ezequiel</h1>"; //normalemente esta en un html y el servidor lo lee
+        String html = "<h1>Servidor de Diana</h1>"; //normalemente esta en un html y el servidor lo lee
         String resp ="HTTP/1.0\n"
                 +"Content-Type: text/html\n"
                 +"Content-Length: "+ html.length()+"\n\n"

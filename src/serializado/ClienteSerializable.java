@@ -17,7 +17,7 @@ public class ClienteSerializable {
         try {
             ObjectOutputStream out = new ObjectOutputStream(so.getOutputStream());
             ObjectInputStream in = new ObjectInputStream(so.getInputStream());
-            out.writeObject(new Persona("Ezequiel","Anchorena",30));
+            out.writeObject(new Persona("Diana","Portillo",30));
             System.out.println(in.readObject());
             out.close();
             in.close();
